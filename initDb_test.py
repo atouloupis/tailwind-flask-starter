@@ -8,12 +8,18 @@ app = create_app()
 # Activez le contexte d'application
 app.app_context().push()
 
-from project.models import User, db
+from project.models import User, db, Files, Residence
 
 def create_test_data():
     # Créer des utilisateurs de test
     user1 = User(name='Andreas Touloupis', email='andreas.touloupis@gmail.com',password=generate_password_hash('123456', method='pbkdf2'), dateOfBirth=date(1990, 12, 12))
-    user2 = User(name='jane_doe', email='jane@example.com',password=generate_password_hash('123456', method='pbkdf2'), dateOfBirth=date(1990, 12, 12))
+    user2 = User(name='jojo', email='jojo@example.com',password=generate_password_hash('123456', method='pbkdf2'), dateOfBirth=date(1990, 12, 12))
+
+    residence1 = Residence(name='Andreas Touloupis', email='andreas.touloupis@gmail.com',password=generate_password_hash('123456', method='pbkdf2'), dateOfBirth=date(1990, 12, 12))
+    residence2 = Residence(name='jojo', email='jojo@example.com',password=generate_password_hash('123456', method='pbkdf2'), dateOfBirth=date(1990, 12, 12))
+
+
+    file1 = File(storageId='1234567', userUpload='',uploadDate=date(2023, 12, 12), fileType='facture',metadataFile='{}')
 
     # Ajouter les utilisateurs à la base de données
     db.session.add(user1)

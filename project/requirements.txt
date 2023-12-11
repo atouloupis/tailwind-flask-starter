@@ -1,5 +1,7 @@
+wheel
 Flask
 flask-login
 flask-sqlalchemy
 flask-migrate
 pyopenssl
+psycopg2-binary

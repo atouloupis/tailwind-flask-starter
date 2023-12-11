@@ -1,3 +1,8 @@
-{"image":"mcr.microsoft.com/devcontainers/universal:2",
-"postCreateCommand": "python app.py ; export FLASK_APP=project ; export FLASK_DEBUG=1"
+{
+    "overrideCommand": false,
+  "build": { "dockerfile": "../project/Dockerfile" }
+//    "dockerComposeFile": "./docker-compose.yml",
+//    "service": "web",
+//    "workspaceFolder": "/workspaces/tailwind-flask-starter/"
+
 }
