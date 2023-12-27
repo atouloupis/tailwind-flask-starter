@@ -11,14 +11,14 @@ class user(UserMixin, db.Model):
     phone1=db.Column(db.String(100))
     phone2=db.Column(db.String(100))
 
-    Fournisseurs = db.relationship('fournisseur', backref='user')
+#    Fournisseurs = db.relationship('fournisseur', backref='user')
     UserProfileResidences = db.relationship('userprofileresidence', backref='user')
     files = db.relationship('files', backref='user')
     sinister = db.relationship('sinister', backref='user')
     quote = db.relationship('quote', backref='user')
     invoice = db.relationship('invoice', backref='user')
     appartment = db.relationship('appartment', backref='user')
-    userSinisterImpacted = db.relationship('userSinisterImpacted', backref='user')
+    userSinisterImpacted = db.relationship('usersinisterimpacted', backref='user')
     message = db.relationship('message', backref='user')
     
 
@@ -30,7 +30,7 @@ class residence(UserMixin, db.Model):
     city=db.Column(db.String(1000))
     x=db.Column(db.Integer)
     y=db.Column(db.Integer)
-    idBan=db.Column(db.Integer,nullable=False)
+    idBan=db.Column(db.String(100),nullable=False)
     label=db.Column(db.String(1000))
     postcode=db.Column(db.Integer)
     insee=db.Column(db.Integer)
@@ -42,13 +42,13 @@ class residence(UserMixin, db.Model):
     dtgLink=db.Column(db.String(1000))
     dtgResume=db.Column(db.String(1000))
     heatingSystem=db.Column(db.String(100))
-    financeId=db.Column(db.Integer,db.ForeignKey('finance.id'),nullable=False)
+    financeId=db.Column(db.Integer,db.ForeignKey('finance.id'))
     elevators=db.Column(db.Integer)
     yearOfConstruction=db.Column(db.Integer)
 
     FournisseurResidence = db.relationship('fournisseurresidence', backref='residence')
     UserProfileResidence = db.relationship('userprofileresidence', backref='residence')
-    files = db.relationship('files', backref='residence')
+    Pppartement = db.relationship('appartment', backref='residence')
 
 class profile(enum.Enum):
     fournisseur="Fournisseur"
@@ -89,7 +89,6 @@ class fournisseur(UserMixin, db.Model):
     quotes = db.relationship('quote', backref='fournisseur')
     activiteFournisseur = db.relationship('activitefournisseur', backref='fournisseur')
     FournisseurResidence = db.relationship('fournisseurresidence', backref='fournisseur')
-    files = db.relationship('files', backref='fournisseur')
     charges = db.relationship('charges', backref='fournisseur')
 
 class activite(enum.Enum):
@@ -115,29 +114,31 @@ class fournisseurresidence(UserMixin, db.Model):
     fournisseurId=db.Column(db.Integer,db.ForeignKey('fournisseur.id'),nullable=False)
     residenceId=db.Column(db.Integer,db.ForeignKey('residence.id'),nullable=False)
 
+class fileType(enum.Enum):
+    facture="Facture"
+    quote="Estimation"
+    rib="Rib"
+
 class files(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
-    storageId=db.Column(db.Integer,unique=True,nullable=False)
+    storageId=db.Column(db.String(200),unique=True,nullable=False)
     userUpload = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
     uploadDate = db.Column(db.Date(),nullable=False)
-    fileType = db.Column(db.String(100),nullable=False)
-    fournisseurId = db.Column(db.Integer,db.ForeignKey('fournisseur.id'),nullable=False)
-    residenceId=db.Column(db.Integer,db.ForeignKey('residence.id'),nullable=False)
+    fileType = db.Column(db.Enum(fileType))
     metadataFile = db.Column(db.String(1000))
-    quoteId=db.Column(db.Integer,db.ForeignKey('quote.id'),nullable=False)
 
     invoices = db.relationship('invoice', backref='files')
     message = db.relationship('message', backref='files')
+    finance = db.relationship('finance', backref='files')
     
 class invoice(UserMixin, db.Model):
     id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
-    quoteId=db.Column(db.Integer,db.ForeignKey('quote.id'),nullable=False)
     fileId=db.Column(db.Integer,db.ForeignKey('files.id'),nullable=False)
     totalPriceWithVAT= db.Column(db.Integer,unique=True,nullable=False)
     paid=db.Column(db.Boolean) #oui non
     creatorId=db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
 
-    sinister= db.relationship('sinister', backref='invoice')
+    invoicesinister= db.relationship('invoicesinister', backref='invoice')
 
 class quoteStatus(enum.Enum):
     en_cours="En cours"
@@ -161,10 +162,8 @@ class quote(UserMixin, db.Model):
     totalPrice= db.Column(db.Integer,nullable=False)
     userCreator=db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
 
-    files = db.relationship('files', backref='quote')
     quoteLines = db.relationship('quotelines', backref='quote')
-    invoice = db.relationship('invoice', backref='quote')
-    sinister = db.relationship('sinister', backref='quote')
+    quotesinister = db.relationship('quotesinister', backref='quote')
 
 
 class unit(enum.Enum):
@@ -195,23 +194,23 @@ class quotelines(UserMixin, db.Model):
 class appartment(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
     userId= db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
+    residenceId=db.Column(db.Integer,db.ForeignKey('residence.id'),nullable=False)
+    lotNumber=db.Column(db.String(10))
     tantieme= db.Column(db.Integer,unique=True,nullable=False)
     number= db.Column(db.String(5),nullable=False)
     area= db.Column(db.Integer,unique=True,nullable=False)
     dpe=db.Column(db.String(1),nullable=False)
     dpeResume=db.Column(db.String(500),nullable=False)
 
-    sinister= db.relationship('sinister', backref='appartment')
-
 class bankList(enum.Enum):
-    creditmutuel="Credi Mutuel"
+    creditmutuel="Credit Mutuel"
     qonto="Qonto"
     bnpPro="BNP Professionel"
     helloBanque="Hello Banque"
 
 class finance(UserMixin, db.Model):
     id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
-    ribLink= db.Column(db.String(200),nullable=False)
+    ribId= db.Column(db.Integer,db.ForeignKey('files.id'),nullable=False)
     iban= db.Column(db.String(20),nullable=False)
     bank=db.Column(db.Enum(bankList))
 
@@ -238,20 +237,30 @@ class sinister(UserMixin, db.Model):
     id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
     floor= db.Column(db.Integer,unique=True,nullable=False)
     stairs= db.Column(db.String(20),nullable=False)
-    appartmentId= db.Column(db.Integer,db.ForeignKey('appartment.id'),nullable=False)
     sinisterType=db.Column(db.Enum(sinisterType))
     status=db.Column(db.Enum(sinisterStatus))
     description= db.Column(db.String(500),nullable=False)
     creatorId= db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
     createdDate=db.Column(db.DateTime())
-    quoteId= db.Column(db.Integer,db.ForeignKey('quote.id'),nullable=False)
-    invoiceId= db.Column(db.Integer,db.ForeignKey('invoice.id'),nullable=False)
 
-    userSinisterImpacted= db.relationship('userSinisterImpacted', backref='sinister')
+    userSinisterImpacted= db.relationship('usersinisterimpacted', backref='sinister')
+    invoicesinister= db.relationship('invoicesinister', backref='sinister')
+    quotesinister = db.relationship('quotesinister', backref='sinister')
+
 
 class usersinisterimpacted(UserMixin, db.Model):
     id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
     userId= db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
+    sinisterId= db.Column(db.Integer,db.ForeignKey('sinister.id'),nullable=False)
+
+class quotesinister(UserMixin, db.Model):
+    id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
+    quoteId= db.Column(db.Integer,db.ForeignKey('quote.id'),nullable=False)
+    sinisterId= db.Column(db.Integer,db.ForeignKey('sinister.id'),nullable=False)
+
+class invoicesinister(UserMixin, db.Model):
+    id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
+    invoiceId= db.Column(db.Integer,db.ForeignKey('invoice.id'),nullable=False)
     sinisterId= db.Column(db.Integer,db.ForeignKey('sinister.id'),nullable=False)
 
 
