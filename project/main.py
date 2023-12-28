@@ -24,3 +24,9 @@ def tourdecontrol():
                 'This is the third event.'
                 ]
     return render_template("boardPages/tourdecontrol.html",timelines=timelines, user=current_user)
+
+@main.route('/immeuble')
+@login_required
+def immeuble():
+    
+    return render_template("boardPages/immeuble.html",user=current_user)

@@ -1,12 +1,12 @@
 # testFile.py
-
+import os
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 #from azure.identity import DefaultAzureCredential
 
 # Remplacez ces valeurs par les vôtres
-ACCOUNT_NAME = "geduser"
-CONTAINER_NAME = "ged-immeuble"
-ACCOUNT_KEY = "wVXm3NnLrB9IMLpB2jybrYXLNIE6stgUgLtTj7wDbhZWyzDijAHw6qGkt0Sfe5Zvt0+I3UjYiBi4+ASt5GApHg=="
+ACCOUNT_NAME = os.getenv("ACCOUNT_NAME")
+CONTAINER_NAME = os.getenv("CONTAINER_NAME")
+ACCOUNT_KEY = os.getenv("ACCOUNT_KEY")
 
 # Utilisez DefaultAzureCredential pour l'authentification
 blob_service_client = BlobServiceClient(

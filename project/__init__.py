@@ -44,4 +44,7 @@ def create_app():
     from .importFile import importFile as importFile_blueprint
     app.register_blueprint(importFile_blueprint)
 
+    from .exportFile import exportFile as exportFile_blueprint
+    app.register_blueprint(exportFile_blueprint)
+
     return app

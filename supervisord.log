@@ -4,3 +4,35 @@
 2023-12-27 22:13:56,040 INFO waiting for runFlask to die
 2023-12-27 22:13:59,047 INFO waiting for runFlask to die
 2023-12-27 22:14:01,336 INFO stopped: runFlask (exit status 0)
+2023-12-28 09:29:17,063 INFO Set uid to user 0 succeeded
+2023-12-28 09:29:17,097 INFO supervisord started with pid 1
+2023-12-28 09:29:18,113 INFO spawned: 'runDB' with pid 27
+2023-12-28 09:29:18,128 INFO spawned: 'createUser' with pid 28
+2023-12-28 09:29:18,136 INFO spawned: 'runFlask' with pid 30
+2023-12-28 09:29:18,151 INFO spawned: 'migrateTables1' with pid 31
+2023-12-28 09:29:18,165 INFO spawned: 'migrateTables2' with pid 33
+2023-12-28 09:29:18,179 INFO spawned: 'upgradeTables3' with pid 35
+2023-12-28 09:29:18,188 INFO spawned: 'initDB' with pid 37
+2023-12-28 09:29:19,202 INFO success: runDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,204 INFO success: createUser entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,206 INFO success: runFlask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,208 INFO success: migrateTables1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,212 INFO success: migrateTables2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,213 INFO success: upgradeTables3 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:19,215 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-28 09:29:20,717 INFO exited: runDB (exit status 0; expected)
+2023-12-28 09:29:25,971 INFO exited: createUser (exit status 0; expected)
+2023-12-28 09:29:40,285 INFO exited: migrateTables1 (exit status 0; expected)
+2023-12-28 09:29:42,955 INFO exited: migrateTables2 (exit status 0; expected)
+2023-12-28 09:30:15,654 INFO exited: upgradeTables3 (exit status 0; expected)
+2023-12-28 09:30:17,398 INFO exited: initDB (exit status 0; expected)
+2023-12-28 13:45:32,396 INFO exited: runFlask (exit status 0; expected)
+2023-12-28 23:20:15,621 INFO reaped unknown pid 50327 (terminated by SIGHUP)
+2023-12-28 23:20:15,654 INFO reaped unknown pid 56210 (terminated by SIGHUP)
+2023-12-28 23:20:16,662 INFO reaped unknown pid 63387 (exit status 0)
+2023-12-28 23:20:16,670 INFO reaped unknown pid 677 (exit status 0)
+2023-12-28 23:20:16,674 INFO reaped unknown pid 7348 (exit status 0)
+2023-12-28 23:20:16,683 INFO reaped unknown pid 63230 (exit status 0)
+2023-12-28 23:20:16,689 INFO reaped unknown pid 63373 (terminated by SIGTERM)
+2023-12-28 23:20:16,691 INFO reaped unknown pid 63374 (terminated by SIGTERM)
+2023-12-28 23:20:27,748 WARN received SIGTERM indicating exit request
