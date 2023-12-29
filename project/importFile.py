@@ -7,6 +7,7 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 #from .models import files
 from . import db   
 from .models import user 
+import time
 
 importFile = Blueprint('importFile', __name__)
 
@@ -24,14 +25,13 @@ def upload_file():
     if "file" not in request.files:
         flash('Impossible à sauvegarder')
         return redirect(request.referrer or url_for('main.tourdecontrol'))
-
+    time.sleep(5)
     file = request.files["file"]
     residenceId=request.form.get('residence')
 
     if file.filename == "":
         flash('Pas de fichier sauvegardé')
         return redirect(request.referrer or url_for('main.tourdecontrol'))
-
     # Utilisez DefaultAzureCredential pour l'authentification
     blob_service_client = BlobServiceClient(
         account_url=f"https://{ACCOUNT_NAME}.blob.core.windows.net",

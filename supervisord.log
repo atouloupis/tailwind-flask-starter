@@ -36,3 +36,33 @@
 2023-12-28 23:20:16,689 INFO reaped unknown pid 63373 (terminated by SIGTERM)
 2023-12-28 23:20:16,691 INFO reaped unknown pid 63374 (terminated by SIGTERM)
 2023-12-28 23:20:27,748 WARN received SIGTERM indicating exit request
+2023-12-29 09:19:06,357 INFO Set uid to user 0 succeeded
+2023-12-29 09:19:06,415 INFO supervisord started with pid 1
+2023-12-29 09:19:07,423 INFO spawned: 'runDB' with pid 29
+2023-12-29 09:19:07,448 INFO spawned: 'createUser' with pid 30
+2023-12-29 09:19:07,481 INFO spawned: 'runFlask' with pid 31
+2023-12-29 09:19:07,510 INFO spawned: 'migrateTables1' with pid 32
+2023-12-29 09:19:07,547 INFO spawned: 'migrateTables2' with pid 35
+2023-12-29 09:19:07,587 INFO spawned: 'upgradeTables3' with pid 36
+2023-12-29 09:19:07,664 INFO spawned: 'initDB' with pid 38
+2023-12-29 09:19:08,690 INFO success: runDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,716 INFO success: createUser entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,735 INFO success: runFlask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,750 INFO success: migrateTables1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,755 INFO success: migrateTables2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,771 INFO success: upgradeTables3 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:08,774 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:10,034 INFO exited: runDB (exit status 0; expected)
+2023-12-29 09:19:25,097 WARN exited: migrateTables1 (exit status 1; not expected)
+2023-12-29 09:19:25,144 INFO spawned: 'migrateTables1' with pid 629
+2023-12-29 09:19:25,159 INFO exited: createUser (exit status 0; expected)
+2023-12-29 09:19:26,752 INFO success: migrateTables1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:36,631 WARN exited: migrateTables2 (exit status 1; not expected)
+2023-12-29 09:19:37,254 INFO spawned: 'migrateTables2' with pid 684
+2023-12-29 09:19:38,265 INFO success: migrateTables2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-12-29 09:19:40,548 INFO exited: migrateTables1 (exit status 0; expected)
+2023-12-29 09:20:01,651 INFO exited: migrateTables2 (exit status 0; expected)
+2023-12-29 09:20:04,759 INFO exited: upgradeTables3 (exit status 0; expected)
+2023-12-29 09:20:06,196 INFO exited: initDB (exit status 0; expected)
+2023-12-29 11:34:40,011 INFO reaped unknown pid 663 (exit status 0)
+2023-12-29 11:34:40,030 INFO reaped unknown pid 5398 (exit status 0)
