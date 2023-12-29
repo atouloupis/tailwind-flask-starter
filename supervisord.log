@@ -66,3 +66,8 @@
 2023-12-29 09:20:06,196 INFO exited: initDB (exit status 0; expected)
 2023-12-29 11:34:40,011 INFO reaped unknown pid 663 (exit status 0)
 2023-12-29 11:34:40,030 INFO reaped unknown pid 5398 (exit status 0)
+2023-12-29 11:34:55,057 WARN received SIGTERM indicating exit request
+2023-12-29 11:34:55,081 INFO waiting for runFlask to die
+2023-12-29 11:34:58,089 INFO waiting for runFlask to die
+2023-12-29 11:35:01,104 INFO waiting for runFlask to die
+2023-12-29 11:35:01,164 INFO stopped: runFlask (exit status 0)
