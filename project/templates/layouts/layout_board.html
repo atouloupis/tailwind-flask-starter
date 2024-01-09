@@ -50,7 +50,7 @@
           </svg>
           <span class="sr-only">Toggle sidebar</span>
         </button>
-        <a href="#" class="flex items-center justify-between mr-4">
+        <a href="/toto" class="flex items-center justify-between mr-4">
           <img
             src="https://flowbite.s3.amazonaws.com/logo.svg"
             class="mr-3 h-8"
@@ -556,22 +556,25 @@
 
 <script>
 
-  $("#layoutBoard a").click(function(event){event.preventDefault();
+  $("#layoutBoard a").click(function(event){
     var url=$(this).attr("href")
-
-    $.ajax({
-      url:url,
-      type:"get",
-      success:
-        function(response){
-          $("#content").html(response);
-        },
-        error:
-          function(xhr){
-            $("#content").html("<p>Une erreur s'est produite</p>");
-          }
-    })
+    if(url!="/logout"){
+      event.preventDefault();
+      $.ajax({
+        url:url,
+        type:"get",
+        success:
+          function(response){
+            $("#content").html(response);
+          },
+          error:
+            function(xhr){
+              $("#content").html("<p>Une erreur s'est produite</p>");
+            }
+      })
+    }
   });
+
 </script> 
 
 {% include './boardPages/components/upload_modal.html' %} 

@@ -17,34 +17,48 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form id="uploadFile" class="p-4 md:p-5" enctype=multipart/form-data> <!-- method="POST" action="/upload"> -->
+            <form id="uploadFile" class="p-4 md:p-5" enctype=multipart/form-data>
                 <div class="grid gap-4 mb-4 grid-cols-2">
                     <div class="col-span-2">
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                         <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
                     </div>
                     <div class="col-span-2 sm:col-span-1">
-                        <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                        <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="$2999">
-                    </div>
-                    <div class="col-span-2 sm:col-span-1">
-                        <label for="residence" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Residene</label>
-                        <select id="residence" name="residence" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required="">
-                            <option selected="">Select residence</option>
-                            <option value="01">La Garenne Rue voltaine</option>
-                            <option value="02">Neuilly rue du Général</option>
+                        <label for="residence" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Residence</label>
+                        <select id="residence" name="residence" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                            <option value="">Select residence</option>
+                            <option value="1">La Garenne Rue voltaine</option>
+                            <option value="2">Neuilly rue du Général</option>
                         </select>
                     </div>
-                    <div class="col-span-2">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="fileType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type de fichier</label>
+                        <select id="fileType" name="fileType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                            <option value="">Select type fichier</option>
+                            {% for filetype in fileTypes %}
+                            <option value="{{[filetype[1].name,filetype[1].value]}}">{{filetype[1].value}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <!-- <div class="col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
                         <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
-                    </div>
+                    </div> -->
                     <div class="col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
-                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" name="file">
-                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-                    </div>
-
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" name="file" required="">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG ou PDF (MAX. 10Mo).</p>
+                    </div>  
+                    <div class="col-span-2" id="message" hidden>
+                        <span id="message-pos" style="display:none" class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300" hidden>
+                            <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                Available
+                        </span>
+                        <span id="message-neg" style="display:none" class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+                            <span class="w-2 h-2 me-1 bg-red-500 rounded-full"></span>
+                            Unavailable
+                        </span>
+                    </div>  
                 </div>
                 <button id="add-product-button" type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
@@ -64,26 +78,61 @@
 </div> 
 
 <script>
-   /* document.getElementById('add-product-button').addEventListener('click', function() {
-        // Affiche le spinner
-        document.getElementById('spinner').classList.remove('hidden');
-    });*/
     $(document).ready(function() {
-  $("#uploadFile").on("submit", function(event) {
+    $("#uploadFile").on("submit", function(event) {
+    const resultpos = document.getElementById("message-pos")
+    const resultneg = document.getElementById("message-neg")
     event.preventDefault(); // empêcher la soumission par défaut
     if (this.checkValidity()) { // vérifier la validité du formulaire
+        var form_data = new FormData($('#uploadFile')[0]);
+        var property=document.getElementById("file_input").files[0];
+        var name=property.name;
+        var image_extension = name.split('.').pop().toLowerCase();
+       if(jQuery.inArray(image_extension,['gif','jpg','jpeg','pdf']) == -1){
+            alert("Format de fichier invalide");
+        }
+        else{
         $("#spinner").show(); // afficher le spinner
-      $.ajax({
-        url: "/upload",
+        $.ajax({
+        url: "{{url_for('importFile.upload')}}",
         type: "POST",
-        data: $(this).serialize(), // envoyer les données du formulaire
+        data: form_data,
+        contentType: false,
+        cache: false,
+        processData: false,
         success: function(response) {
             $("#spinner").hide(); // masquer le spinner
-            $("#close-modal").click();
-          //alert(response); // afficher la réponse du serveur
+            if (response.status=='false'){
+                resultneg.textContent = response.message;
+                $('#message-neg').show();
+            }
+            else
+            {
+                resultpos.textContent = response.message;
+                $('#message-pos').show();
+            }
+            $("#message").show();
+
+            //$("#close-modal").click();
         }
       });
     }
+    }
   });
+
+
+    // Watch for changes
+    var ob = new MutationObserver(function() {
+        if ($('#upload-modal').hasClass("hidden")) {
+            $('#upload-modal form')[0].reset();  //remettre les valeurs par défaut
+            $("#message").hide();
+            $("#spinner").hide();
+
+        }
+    });
+    ob.observe($("#upload-modal")[0], {
+        attributes: true
+    });
 });
     </script>
+

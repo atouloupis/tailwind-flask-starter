@@ -329,3 +329,17 @@ export FLASK_DEBUG=1
 flask run --cert=adhoc
 
 ```
+
+## Init files before running dockerfile
+
+Create a /project/init/init.sql file to create your sql user et database :
+CREATE USER user WITH PASSWORD 'password';
+CREATE DATABASE user OWNER user;
+
+Then create your .env file with all the environnement variable :
+ACCOUNT_NAME =xxx
+CONTAINER_NAME =xxxx
+ACCOUNT_KEY =xxxx
+SECRET_KEY =xxxx
+SQLALCHEMY_DATABASE_URI =postgresql://user:password@localhost:5432/
+

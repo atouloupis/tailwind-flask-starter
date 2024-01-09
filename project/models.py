@@ -1,6 +1,6 @@
 from flask_login import UserMixin
 from . import db
-import enum
+import enum,datetime
 
 class user(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
@@ -48,7 +48,8 @@ class residence(UserMixin, db.Model):
 
     FournisseurResidence = db.relationship('fournisseurresidence', backref='residence')
     UserProfileResidence = db.relationship('userprofileresidence', backref='residence')
-    Pppartement = db.relationship('appartment', backref='residence')
+    Appartement = db.relationship('appartment', backref='residence')
+    filesresidence = db.relationship('filesresidence', backref='residence')
 
 class profile(enum.Enum):
     fournisseur="Fournisseur"
@@ -118,18 +119,26 @@ class fileType(enum.Enum):
     facture="Facture"
     quote="Estimation"
     rib="Rib"
+    test="Test"
 
 class files(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
     storageId=db.Column(db.String(200),unique=True,nullable=False)
     userUpload = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
-    uploadDate = db.Column(db.Date(),nullable=False)
+    uploadDate = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     fileType = db.Column(db.Enum(fileType))
     metadataFile = db.Column(db.String(1000))
 
     invoices = db.relationship('invoice', backref='files')
     message = db.relationship('message', backref='files')
     finance = db.relationship('finance', backref='files')
+    filesresidence = db.relationship('filesresidence', backref='files')
+
+
+class filesresidence(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
+    filesId=db.Column(db.Integer,db.ForeignKey('files.id'))
+    residenceId=db.Column(db.Integer,db.ForeignKey('residence.id'))
     
 class invoice(UserMixin, db.Model):
     id= db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
