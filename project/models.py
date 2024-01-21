@@ -123,6 +123,7 @@ class fileType(enum.Enum):
 
 class files(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True,nullable=False) # primary keys are required by SQLAlchemy
+    fileName=db.Column(db.String(200),nullable=False)
     storageId=db.Column(db.String(200),unique=True,nullable=False)
     userUpload = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False)
     uploadDate = db.Column(db.DateTime, default=datetime.datetime.utcnow)

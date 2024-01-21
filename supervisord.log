@@ -1,0 +1,413 @@
+2024-01-18 08:30:15,782 WARN received SIGTERM indicating exit request
+2024-01-18 08:30:15,905 INFO waiting for initDB to die
+2024-01-18 08:30:16,918 WARN stopped: initDB (terminated by SIGTERM)
+2024-01-18 20:05:58,740 INFO Set uid to user 0 succeeded
+2024-01-18 20:05:58,785 INFO supervisord started with pid 1
+2024-01-18 20:05:59,791 INFO spawned: 'runDB' with pid 27
+2024-01-18 20:05:59,796 INFO spawned: 'createUser' with pid 28
+2024-01-18 20:05:59,799 INFO spawned: 'runFlask' with pid 29
+2024-01-18 20:05:59,804 INFO spawned: 'migrateTables1' with pid 30
+2024-01-18 20:05:59,818 INFO spawned: 'migrateTables2' with pid 31
+2024-01-18 20:05:59,841 INFO spawned: 'upgradeTables3' with pid 32
+2024-01-18 20:05:59,854 INFO spawned: 'initDB' with pid 35
+2024-01-18 20:06:00,865 INFO success: runDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,868 INFO success: createUser entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,871 INFO success: runFlask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,874 INFO success: migrateTables1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,881 INFO success: migrateTables2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,884 INFO success: upgradeTables3 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:00,889 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:06:04,222 INFO exited: runDB (exit status 0; expected)
+2024-01-18 20:06:06,187 INFO exited: createUser (exit status 0; expected)
+2024-01-18 20:06:18,270 INFO exited: migrateTables1 (exit status 0; expected)
+2024-01-18 20:06:20,574 INFO exited: migrateTables2 (exit status 0; expected)
+2024-01-18 20:06:52,462 INFO exited: upgradeTables3 (exit status 0; expected)
+2024-01-18 20:06:57,548 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:06:58,574 INFO spawned: 'initDB' with pid 566
+2024-01-18 20:06:59,576 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:07:56,363 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:07:57,367 INFO spawned: 'initDB' with pid 742
+2024-01-18 20:07:58,369 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:08:55,286 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:08:56,291 INFO spawned: 'initDB' with pid 918
+2024-01-18 20:08:57,294 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:09:53,655 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:09:54,658 INFO spawned: 'initDB' with pid 1100
+2024-01-18 20:09:55,661 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:10:52,183 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:10:53,191 INFO spawned: 'initDB' with pid 1276
+2024-01-18 20:10:54,198 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:11:50,558 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:11:51,563 INFO spawned: 'initDB' with pid 1452
+2024-01-18 20:11:52,566 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:12:49,274 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:12:50,280 INFO spawned: 'initDB' with pid 1641
+2024-01-18 20:12:51,282 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:13:47,680 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:13:48,711 INFO spawned: 'initDB' with pid 1817
+2024-01-18 20:13:49,714 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:14:46,073 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:14:47,079 INFO spawned: 'initDB' with pid 1993
+2024-01-18 20:14:48,085 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:15:44,443 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:15:45,447 INFO spawned: 'initDB' with pid 2169
+2024-01-18 20:15:46,449 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:16:43,169 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:16:44,176 INFO spawned: 'initDB' with pid 2351
+2024-01-18 20:16:45,180 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:17:42,108 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:17:43,112 INFO spawned: 'initDB' with pid 2527
+2024-01-18 20:17:44,114 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:18:41,219 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:18:42,226 INFO spawned: 'initDB' with pid 2709
+2024-01-18 20:18:43,230 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:19:39,957 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:19:40,962 INFO spawned: 'initDB' with pid 2885
+2024-01-18 20:19:41,965 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:20:38,365 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:20:39,368 INFO spawned: 'initDB' with pid 3061
+2024-01-18 20:20:40,370 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:21:36,990 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:21:37,993 INFO spawned: 'initDB' with pid 3237
+2024-01-18 20:21:38,996 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:22:35,340 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:22:36,346 INFO spawned: 'initDB' with pid 3419
+2024-01-18 20:22:37,351 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:23:33,759 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:23:34,765 INFO spawned: 'initDB' with pid 3595
+2024-01-18 20:23:35,769 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:24:32,354 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:24:33,359 INFO spawned: 'initDB' with pid 3770
+2024-01-18 20:24:34,363 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:25:30,694 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:25:31,697 INFO spawned: 'initDB' with pid 3946
+2024-01-18 20:25:32,700 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:26:28,978 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:26:29,981 INFO spawned: 'initDB' with pid 4122
+2024-01-18 20:26:30,984 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:27:27,347 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:27:28,353 INFO spawned: 'initDB' with pid 4304
+2024-01-18 20:27:29,367 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:28:25,725 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:28:26,728 INFO spawned: 'initDB' with pid 4480
+2024-01-18 20:28:27,731 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:29:24,140 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:29:25,143 INFO spawned: 'initDB' with pid 4656
+2024-01-18 20:29:26,145 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:30:22,555 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:30:23,560 INFO spawned: 'initDB' with pid 4832
+2024-01-18 20:30:24,564 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:31:20,988 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:31:21,992 INFO spawned: 'initDB' with pid 5014
+2024-01-18 20:31:22,996 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:32:19,412 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:32:20,418 INFO spawned: 'initDB' with pid 5190
+2024-01-18 20:32:21,422 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:33:18,054 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:33:19,058 INFO spawned: 'initDB' with pid 5366
+2024-01-18 20:33:20,061 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:34:16,404 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:34:17,407 INFO spawned: 'initDB' with pid 5542
+2024-01-18 20:34:18,410 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:35:14,774 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:35:15,777 INFO spawned: 'initDB' with pid 5721
+2024-01-18 20:35:16,780 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:36:13,711 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:36:14,714 INFO spawned: 'initDB' with pid 5900
+2024-01-18 20:36:15,717 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:37:12,189 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:37:13,194 INFO spawned: 'initDB' with pid 6076
+2024-01-18 20:37:14,198 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:38:10,602 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:38:11,604 INFO spawned: 'initDB' with pid 6258
+2024-01-18 20:38:12,606 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:39:08,994 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:39:10,000 INFO spawned: 'initDB' with pid 6432
+2024-01-18 20:39:11,005 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:40:07,289 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:40:08,292 INFO spawned: 'initDB' with pid 6608
+2024-01-18 20:40:09,295 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:41:05,607 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:41:06,621 INFO spawned: 'initDB' with pid 6784
+2024-01-18 20:41:07,624 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:42:03,908 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:42:04,922 INFO spawned: 'initDB' with pid 6959
+2024-01-18 20:42:05,925 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:43:02,406 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:43:03,409 INFO spawned: 'initDB' with pid 7141
+2024-01-18 20:43:04,411 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:44:00,764 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:44:01,767 INFO spawned: 'initDB' with pid 7317
+2024-01-18 20:44:02,770 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:44:59,160 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:45:00,166 INFO spawned: 'initDB' with pid 7493
+2024-01-18 20:45:01,169 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:45:57,499 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:45:58,503 INFO spawned: 'initDB' with pid 7669
+2024-01-18 20:45:59,505 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:46:55,852 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:46:56,858 INFO spawned: 'initDB' with pid 7845
+2024-01-18 20:46:57,863 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:47:54,172 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:47:55,175 INFO spawned: 'initDB' with pid 8027
+2024-01-18 20:47:56,177 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:48:53,070 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:48:54,073 INFO spawned: 'initDB' with pid 8203
+2024-01-18 20:48:55,076 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:49:51,545 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:49:52,556 INFO spawned: 'initDB' with pid 8484
+2024-01-18 20:49:53,558 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:50:50,440 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:50:51,446 INFO spawned: 'initDB' with pid 8666
+2024-01-18 20:50:52,451 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:51:49,129 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:51:50,134 INFO spawned: 'initDB' with pid 8842
+2024-01-18 20:51:51,138 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:52:47,523 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:52:48,528 INFO spawned: 'initDB' with pid 9018
+2024-01-18 20:52:49,532 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:53:46,059 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:53:47,076 INFO spawned: 'initDB' with pid 9200
+2024-01-18 20:53:48,080 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:54:44,523 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:54:45,526 INFO spawned: 'initDB' with pid 9376
+2024-01-18 20:54:46,529 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:55:43,044 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:55:44,050 INFO spawned: 'initDB' with pid 9552
+2024-01-18 20:55:45,054 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:56:41,535 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:56:42,540 INFO spawned: 'initDB' with pid 9728
+2024-01-18 20:56:43,543 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:57:40,961 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:57:41,969 INFO spawned: 'initDB' with pid 9910
+2024-01-18 20:57:42,971 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:58:39,740 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:58:40,096 INFO spawned: 'initDB' with pid 10086
+2024-01-18 20:58:42,081 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 20:59:37,473 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 20:59:38,476 INFO spawned: 'initDB' with pid 10399
+2024-01-18 20:59:39,478 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:00:36,004 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:00:37,007 INFO spawned: 'initDB' with pid 10581
+2024-01-18 21:00:38,009 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:01:34,404 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:01:35,409 INFO spawned: 'initDB' with pid 10756
+2024-01-18 21:01:36,411 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:02:32,720 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:02:33,724 INFO spawned: 'initDB' with pid 10932
+2024-01-18 21:02:34,726 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:03:31,930 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:03:32,933 INFO spawned: 'initDB' with pid 11114
+2024-01-18 21:03:33,936 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:04:30,255 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:04:31,259 INFO spawned: 'initDB' with pid 11290
+2024-01-18 21:04:32,262 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:05:28,690 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:05:29,696 INFO spawned: 'initDB' with pid 11466
+2024-01-18 21:05:30,700 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:06:27,049 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:06:28,052 INFO spawned: 'initDB' with pid 11642
+2024-01-18 21:06:29,055 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:07:25,327 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:07:26,330 INFO spawned: 'initDB' with pid 11818
+2024-01-18 21:07:27,333 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:08:24,034 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:08:25,037 INFO spawned: 'initDB' with pid 12000
+2024-01-18 21:08:26,040 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:09:22,443 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:09:23,456 INFO spawned: 'initDB' with pid 12176
+2024-01-18 21:09:24,458 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:10:20,887 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:10:21,893 INFO spawned: 'initDB' with pid 12352
+2024-01-18 21:10:22,897 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:11:19,385 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:11:20,391 INFO spawned: 'initDB' with pid 12534
+2024-01-18 21:11:21,395 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:12:17,792 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:12:18,795 INFO spawned: 'initDB' with pid 12710
+2024-01-18 21:12:19,797 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:13:16,156 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:13:17,159 INFO spawned: 'initDB' with pid 12886
+2024-01-18 21:13:18,162 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:14:14,554 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:14:15,557 INFO spawned: 'initDB' with pid 13062
+2024-01-18 21:14:16,560 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:15:13,232 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:15:14,238 INFO spawned: 'initDB' with pid 13244
+2024-01-18 21:15:15,242 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:16:11,808 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:16:12,811 INFO spawned: 'initDB' with pid 13420
+2024-01-18 21:16:13,813 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:17:10,086 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:17:11,089 INFO spawned: 'initDB' with pid 13594
+2024-01-18 21:17:12,092 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:18:08,358 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:18:09,360 INFO spawned: 'initDB' with pid 13770
+2024-01-18 21:18:10,363 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:19:06,643 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:19:07,648 INFO spawned: 'initDB' with pid 13952
+2024-01-18 21:19:08,652 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:20:04,980 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:20:05,983 INFO spawned: 'initDB' with pid 14127
+2024-01-18 21:20:06,985 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:21:03,488 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:21:04,494 INFO spawned: 'initDB' with pid 14303
+2024-01-18 21:21:05,498 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:22:01,814 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:22:02,817 INFO spawned: 'initDB' with pid 14479
+2024-01-18 21:22:03,819 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:23:00,176 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:23:01,182 INFO spawned: 'initDB' with pid 14658
+2024-01-18 21:23:02,188 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:23:58,645 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:23:59,649 INFO spawned: 'initDB' with pid 14837
+2024-01-18 21:24:00,651 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:24:57,097 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:24:58,114 INFO spawned: 'initDB' with pid 15013
+2024-01-18 21:24:59,118 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:25:55,825 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:25:56,831 INFO spawned: 'initDB' with pid 15189
+2024-01-18 21:25:57,835 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:26:54,596 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:26:55,600 INFO spawned: 'initDB' with pid 15371
+2024-01-18 21:26:56,603 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:27:53,042 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:27:54,049 INFO spawned: 'initDB' with pid 15547
+2024-01-18 21:27:55,055 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:28:51,421 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:28:52,427 INFO spawned: 'initDB' with pid 15723
+2024-01-18 21:28:53,431 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:29:49,849 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:29:50,852 INFO spawned: 'initDB' with pid 15908
+2024-01-18 21:29:51,855 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:30:48,399 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:30:49,402 INFO spawned: 'initDB' with pid 16084
+2024-01-18 21:30:50,405 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:31:46,792 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:31:47,797 INFO spawned: 'initDB' with pid 16329
+2024-01-18 21:31:48,802 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:32:45,317 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:32:46,320 INFO spawned: 'initDB' with pid 16505
+2024-01-18 21:32:47,322 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:33:43,802 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:33:44,807 INFO spawned: 'initDB' with pid 16682
+2024-01-18 21:33:45,811 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:34:42,130 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:34:43,133 INFO spawned: 'initDB' with pid 16863
+2024-01-18 21:34:44,136 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:35:40,725 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:35:41,728 INFO spawned: 'initDB' with pid 17039
+2024-01-18 21:35:42,730 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:36:39,139 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:36:40,142 INFO spawned: 'initDB' with pid 17215
+2024-01-18 21:36:41,144 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:37:38,218 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:37:39,221 INFO spawned: 'initDB' with pid 17400
+2024-01-18 21:37:40,225 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:38:36,675 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:38:37,679 INFO spawned: 'initDB' with pid 17712
+2024-01-18 21:38:38,683 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:39:35,118 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:39:36,123 INFO spawned: 'initDB' with pid 17887
+2024-01-18 21:39:37,127 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:40:33,560 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:40:34,567 INFO spawned: 'initDB' with pid 18063
+2024-01-18 21:40:35,572 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:41:31,948 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:41:32,952 INFO spawned: 'initDB' with pid 18245
+2024-01-18 21:41:33,955 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:42:30,303 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:42:31,308 INFO spawned: 'initDB' with pid 18421
+2024-01-18 21:42:32,311 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:43:28,683 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:43:29,689 INFO spawned: 'initDB' with pid 18597
+2024-01-18 21:43:30,693 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:44:27,000 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:44:28,014 INFO spawned: 'initDB' with pid 18773
+2024-01-18 21:44:29,016 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:45:24,733 INFO exited: runFlask (exit status 0; expected)
+2024-01-18 21:45:26,384 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:45:27,405 INFO spawned: 'initDB' with pid 18960
+2024-01-18 21:45:28,413 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:46:25,631 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:46:26,634 INFO spawned: 'initDB' with pid 19337
+2024-01-18 21:46:27,637 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:47:25,805 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:47:26,831 INFO spawned: 'initDB' with pid 19592
+2024-01-18 21:47:27,837 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:48:24,532 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:48:25,535 INFO spawned: 'initDB' with pid 19768
+2024-01-18 21:48:26,538 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:49:22,973 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:49:23,976 INFO spawned: 'initDB' with pid 19944
+2024-01-18 21:49:24,979 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:50:21,421 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:50:22,427 INFO spawned: 'initDB' with pid 20120
+2024-01-18 21:50:23,432 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:51:19,790 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:51:20,793 INFO spawned: 'initDB' with pid 20296
+2024-01-18 21:51:21,796 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:52:18,327 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:52:19,331 INFO spawned: 'initDB' with pid 20472
+2024-01-18 21:52:20,334 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:53:16,694 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:53:17,698 INFO spawned: 'initDB' with pid 20648
+2024-01-18 21:53:18,700 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:54:15,321 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:54:16,324 INFO spawned: 'initDB' with pid 20827
+2024-01-18 21:54:17,327 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:55:13,843 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:55:14,846 INFO spawned: 'initDB' with pid 21006
+2024-01-18 21:55:15,849 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:56:12,738 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:56:13,742 INFO spawned: 'initDB' with pid 21182
+2024-01-18 21:56:14,745 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:57:11,317 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:57:12,320 INFO spawned: 'initDB' with pid 21356
+2024-01-18 21:57:13,333 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:58:09,710 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:58:10,715 INFO spawned: 'initDB' with pid 21544
+2024-01-18 21:58:11,719 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 21:59:08,243 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 21:59:09,247 INFO spawned: 'initDB' with pid 21805
+2024-01-18 21:59:10,250 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 22:00:06,677 WARN exited: initDB (exit status 1; not expected)
+2024-01-18 22:00:07,683 INFO spawned: 'initDB' with pid 21999
+2024-01-18 22:00:08,688 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-18 22:01:05,195 INFO exited: initDB (exit status 0; expected)
+2024-01-19 08:05:43,916 INFO reaped unknown pid 18962 (terminated by SIGHUP)
+2024-01-19 08:05:43,938 INFO reaped unknown pid 28011 (terminated by SIGHUP)
+2024-01-19 08:05:44,944 INFO reaped unknown pid 426 (exit status 0)
+2024-01-19 08:05:44,946 INFO reaped unknown pid 1553 (exit status 0)
+2024-01-19 08:05:48,959 WARN received SIGTERM indicating exit request
+2024-01-19 20:38:19,897 INFO Set uid to user 0 succeeded
+2024-01-19 20:38:19,926 INFO supervisord started with pid 1
+2024-01-19 20:38:20,934 INFO spawned: 'runDB' with pid 26
+2024-01-19 20:38:20,938 INFO spawned: 'createUser' with pid 27
+2024-01-19 20:38:20,943 INFO spawned: 'runFlask' with pid 28
+2024-01-19 20:38:20,950 INFO spawned: 'migrateTables1' with pid 29
+2024-01-19 20:38:20,953 INFO spawned: 'migrateTables2' with pid 30
+2024-01-19 20:38:20,956 INFO spawned: 'upgradeTables3' with pid 31
+2024-01-19 20:38:20,969 INFO spawned: 'initDB' with pid 32
+2024-01-19 20:38:21,984 INFO success: runDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,985 INFO success: createUser entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,987 INFO success: runFlask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,988 INFO success: migrateTables1 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,990 INFO success: migrateTables2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,991 INFO success: upgradeTables3 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:21,992 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:38:24,550 INFO exited: runDB (exit status 0; expected)
+2024-01-19 20:38:27,092 INFO exited: createUser (exit status 0; expected)
+2024-01-19 20:38:41,576 INFO exited: migrateTables1 (exit status 0; expected)
+2024-01-19 20:38:42,729 INFO exited: migrateTables2 (exit status 0; expected)
+2024-01-19 20:39:08,395 INFO exited: runFlask (exit status 0; expected)
+2024-01-19 20:39:13,332 INFO exited: upgradeTables3 (exit status 0; expected)
+2024-01-19 20:39:18,508 WARN exited: initDB (exit status 1; not expected)
+2024-01-19 20:39:19,516 INFO spawned: 'initDB' with pid 608
+2024-01-19 20:39:20,520 INFO success: initDB entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2024-01-19 20:40:17,073 INFO exited: initDB (exit status 0; expected)
+2024-01-20 21:05:24,888 INFO reaped unknown pid 571 (terminated by SIGHUP)
+2024-01-20 21:05:24,904 INFO reaped unknown pid 64582 (terminated by SIGHUP)
+2024-01-20 21:05:24,905 INFO reaped unknown pid 455 (exit status 0)
+2024-01-20 21:05:24,905 INFO reaped unknown pid 16045 (exit status 0)
+2024-01-20 21:05:35,922 WARN received SIGTERM indicating exit request
