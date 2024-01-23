@@ -1,9 +1,10 @@
 # auth.py
-
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+import json
+from flask import Blueprint, render_template, redirect, url_for, request, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required,current_user
-from .models import user
+from .models import user,userprofileresidence,residence,fileType
+from sqlalchemy import select
 from . import db
 
 auth = Blueprint('auth', __name__)
@@ -29,7 +30,25 @@ def login_post():
         return redirect(url_for('auth.login')) # if user doesn't exist or password is wrong, reload the page
 
     # if the above check passes, then we know the user has the right credentials
+    # save user info in the current_user session
     login_user(curr_user, remember=remember)
+    #get de residence user list in DB
+    residences_query = select(userprofileresidence.residenceId,userprofileresidence.isActive,userprofileresidence.profile,residence.label)\
+    .join(residence,residence.id==userprofileresidence.residenceId)\
+    .where(userprofileresidence.userId == current_user.get_id())
+    # Exécuter la requête et récupérer les résultats sous forme de liste
+    residences_list = db.session.execute(residences_query).all()
+    residences_list_dicts = [{"residenceId": r[0],"residenceName": r[3], "isActive": r[1], "profile": r[2].name} for r in residences_list if r[1]==1]
+    #save the residence list and current residence in session
+    session["residence"] = residences_list_dicts
+    session["currentRes"] = residences_list_dicts[0]
+    #fileTypes = list(fileType.__members__.items())
+    fileTypes=[{"name":member.name,"value":member.value} for member in fileType]
+    print(str(fileTypes))
+
+    #fileTypes=json.dumps(fileType)
+    print(fileTypes)
+    session["fileTypes"]=fileTypes
     return redirect(url_for('main.tourdecontrol'))
 
 @auth.route('/signup')
@@ -64,3 +83,4 @@ def signup_post():
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+

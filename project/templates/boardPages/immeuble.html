@@ -5,6 +5,7 @@
     <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 mb-4">
 
 <ul role="list" class="max-w-sm divide-y divide-gray-200 dark:divide-gray-700">
+  {% for file in files %}
   <li class="py-3 sm:py-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
           <div class="flex-shrink-0">
@@ -15,8 +16,10 @@
           </div>
           <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">
-                  Neil Sims
+                  {{file.fileName}} - {{file.fileType}} 
               </p>
+              
+              <a href="{{url_for('importFile.telecharger_fichier')}}">Télécharger le fichier</a>
               <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                   email@flowbite.com
               </p>
@@ -27,7 +30,7 @@
           </span>
       </div>
   </li>
-
+  {% endfor %}
 </ul>
 
     </div>
@@ -35,10 +38,12 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
       <div
         class="border-2 border-dashed border-gray-300 rounded-lg dark:border-gray-600 h-32 md:h-64"
-      >  test3 </div>
+      >              {{session.get("residence")}} </div>
       <div
         class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
-      > test4  </div>
+      > 
+      test3
+      </div>
       <div
         class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-32 md:h-64"
       >  test5 </div>

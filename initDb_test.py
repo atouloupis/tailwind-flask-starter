@@ -46,8 +46,8 @@ def create_test_data():
     file1 = files(storageId='https://geduser.blob.core.windows.net/ged-immeuble/RIB (1).pdf', fileName='Premier RIB', userUpload=1,uploadDate=date(2023, 12, 12), fileType=fileType.rib,metadataFile="{content-type:'application/pdf'}")
     finance1= finance(ribId=1,iban='FR76XXXXXXXXXXXX',bank=bankList.creditmutuel)
     userprofileresidence1= userprofileresidence(userId=1,residenceId=1,profile=profile.admin,isActive=1)
-    userprofileresidence1= userprofileresidence(userId=1,residenceId=2,profile=profile.coproprietaire,isActive=1)
-    userprofileresidence1= userprofileresidence(userId=2,residenceId=1,profile=profile.fournisseur,isActive=1)
+    userprofileresidence2= userprofileresidence(userId=1,residenceId=2,profile=profile.coproprietaire,isActive=1)
+    userprofileresidence3= userprofileresidence(userId=2,residenceId=1,profile=profile.fournisseur,isActive=1)
 
     # Ajouter les utilisateurs à la base de données
     db.session.add(user1)
@@ -65,8 +65,8 @@ def create_test_data():
     db.session.commit()
     db.session.add(userprofileresidence2)
     db.session.commit()
-     db.session.add(userprofileresidence3)
-    db.session.commit()   
+    db.session.add(userprofileresidence3)
+    db.session.commit()
 
     # Committer les changements
     

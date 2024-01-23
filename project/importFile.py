@@ -1,10 +1,12 @@
 # importFile.py
-import os,uuid,time
-from flask import Blueprint, render_template, request, jsonify,flash,redirect,url_for
+import os,uuid,time,datetime
+from datetime import timedelta  
+from flask import Blueprint, render_template, request, jsonify,flash,redirect,url_for,send_file
 from flask_login import login_required,current_user
-from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
+from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient,generate_blob_sas, AccountSasPermissions
 from . import db   
 from .models import user,fileType,files,filesresidence
+
 
 importFile = Blueprint('importFile', __name__)
 
@@ -31,7 +33,6 @@ def upload():
         credential=ACCOUNT_KEY,
     )
     container_client = blob_service_client.get_container_client(CONTAINER_NAME)
-    
 
     for types in fileType:
         if types.name==fileTypeForm[0] :
@@ -47,11 +48,10 @@ def upload():
 
     # Téléchargez le fichier vers le blob
     blob_client.upload_blob(file)
-
     # create new user with the form data. Hash the password so plaintext version isn't saved.
     new_file = files(
     fileName=request.form.get('name'),
-    storageId=blob_client.url,
+    storageId=f"https://{ACCOUNT_NAME}.blob.core.windows.net/{CONTAINER_NAME}/"+blob_prefix+unique_filename,
     userUpload = current_user.get_id(),
     fileType = fileTypeResult,
     metadataFile = '{}' 
@@ -70,3 +70,20 @@ def upload():
     db.session.commit()
 
     return jsonify({"status":"true","message":"Votre fichier a été enregistré."})
+
+
+@importFile.route('/telecharger_fichier')
+def telecharger_fichier():
+    BLOB_NAME='residences/1/Estimation/2d36b20a-ea61-4522-9ae3-61b4502b0c0f_Roadmap SI - P1.pdf'
+    url='https://geduser.blob.core.windows.net/ged-immeuble/residences/1/Estimation/2d36b20a-ea61-4522-9ae3-61b4502b0c0f_Roadmap SI - P1.pdf'
+    sas_token = generate_blob_sas(
+        account_name=ACCOUNT_NAME,
+        account_key=ACCOUNT_KEY,
+        container_name=CONTAINER_NAME,
+        blob_name=BLOB_NAME,
+        permission=AccountSasPermissions(read=True),
+        expiry=datetime.datetime.utcnow() + timedelta(hours=1)
+    )
+
+    url_with_sas = f"{url}?{sas_token}"
+    return redirect(url_with_sas)

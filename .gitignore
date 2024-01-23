@@ -4,3 +4,4 @@ init.sql
 project/init/
 migrations/
 .env
+.log

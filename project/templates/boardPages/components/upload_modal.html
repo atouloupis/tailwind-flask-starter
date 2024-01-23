@@ -26,25 +26,18 @@
                     <div class="col-span-2 sm:col-span-1">
                         <label for="residence" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Residence</label>
                         <select id="residence" name="residence" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
-                            <option value="">Select residence</option>
-                            {% for residence in residencesList %}
-                            <option value="{{residence.residenceId}}">{{residence.residenceName}}</option>
-                            {% endfor %}
+                            <option value="{{session.get("currentRes").residenceId}}">{{session.get("currentRes").residenceName}}</option>
                         </select>
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="fileType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Type de fichier</label>
                         <select id="fileType" name="fileType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                             <option value="">Select type fichier</option>
-                            {% for filetype in fileTypes %}
-                            <option value="{{[filetype[1].name,filetype[1].value]}}">{{filetype[1].value}}</option>
-                            {% endfor %}
+                            {% for filetype in session.get("fileTypes") %}
+                            <option value="{{[filetype.name,filetype.value]}}">{{filetype.value}}</option>
+                             {% endfor %}
                         </select>
-                    </div>
-                    <!-- <div class="col-span-2">
-                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
-                    </div> -->
+                    </div>                     
                     <div class="col-span-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
                         <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" name="file" required="">
