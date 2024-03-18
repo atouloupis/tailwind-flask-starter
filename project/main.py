@@ -34,13 +34,13 @@ def tourdecontrol():
 def immeuble():
     currRes = session.get('currentRes')
     # Créer une requête select
-    files_query = select(files.fileName,files.fileType,files.storageId)\
+    files_query = select(files.fileName,files.fileType,files.id)\
     .select_from(files)\
     .join(filesresidence,files.id==filesresidence.filesId)\
     .where(currRes["residenceId"]==filesresidence.residenceId)
     # Exécuter la requête et récupérer les résultats sous forme de liste
     files_list = db.session.execute(files_query).all()
-    files_list = [{"fileName":member[0],"fileType":member[1].value,"url":member[2]} for member in files_list]
+    files_list = [{"fileName":member[0],"fileType":member[1].value,"fileId":member[2]} for member in files_list]
     return render_template("boardPages/immeuble.html", files=files_list)
 
 @main.errorhandler(404)

@@ -18,8 +18,7 @@
               <p class="text-sm font-semibold text-gray-900 truncate dark:text-white">
                   {{file.fileName}} - {{file.fileType}} 
               </p>
-              
-              <a href="{{url_for('importFile.telecharger_fichier')}}">Télécharger le fichier</a>
+              <button id="downloadButton" data-id="{{url_for('importFile.telecharger_fichier',fileId=file.fileId)}}">Télécharger</button>
               <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                   email@flowbite.com
               </p>
@@ -85,4 +84,21 @@
       >test13</div>
     </div>
   </main>
+
+<script>
+  $(document).ready(function() {
+        $('#downloadButton').click(function() {
+            var fileId = $(this).data('id');
+            console.log(fileId)
+            $.ajax({
+                type: 'GET',
+                url: fileId,  // Appeler la route de téléchargement côté serveur
+                success: function(response) {
+                console.log(response)    // La réponse du serveur peut être ignorée car le téléchargement doit déjà avoir commencé
+                }
+            });
+        });
+    });
+  </script>
+
   {% endblock %}  

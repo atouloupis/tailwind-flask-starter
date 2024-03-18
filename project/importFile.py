@@ -1,8 +1,9 @@
 # importFile.py
-import os,uuid,time,datetime
+import os,uuid,time,datetime, requests
 from datetime import timedelta  
-from flask import Blueprint, render_template, request, jsonify,flash,redirect,url_for,send_file
+from flask import Blueprint, render_template, request, jsonify,flash,redirect,url_for,send_file, session
 from flask_login import login_required,current_user
+from sqlalchemy import select
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient,generate_blob_sas, AccountSasPermissions
 from . import db   
 from .models import user,fileType,files,filesresidence
@@ -52,6 +53,7 @@ def upload():
     new_file = files(
     fileName=request.form.get('name'),
     storageId=f"https://{ACCOUNT_NAME}.blob.core.windows.net/{CONTAINER_NAME}/"+blob_prefix+unique_filename,
+    blobName=blob_prefix + unique_filename,
     userUpload = current_user.get_id(),
     fileType = fileTypeResult,
     metadataFile = '{}' 
@@ -72,18 +74,34 @@ def upload():
     return jsonify({"status":"true","message":"Votre fichier a été enregistré."})
 
 
-@importFile.route('/telecharger_fichier')
-def telecharger_fichier():
-    BLOB_NAME='residences/1/Estimation/2d36b20a-ea61-4522-9ae3-61b4502b0c0f_Roadmap SI - P1.pdf'
-    url='https://geduser.blob.core.windows.net/ged-immeuble/residences/1/Estimation/2d36b20a-ea61-4522-9ae3-61b4502b0c0f_Roadmap SI - P1.pdf'
-    sas_token = generate_blob_sas(
-        account_name=ACCOUNT_NAME,
-        account_key=ACCOUNT_KEY,
-        container_name=CONTAINER_NAME,
-        blob_name=BLOB_NAME,
-        permission=AccountSasPermissions(read=True),
-        expiry=datetime.datetime.utcnow() + timedelta(hours=1)
-    )
+@importFile.route('/telecharger_fichier/<int:fileId>')
+@login_required
+def telecharger_fichier(fileId):
+    currRes = session.get("currentRes")
+    file_residence_query = select(filesresidence.residenceId,files.storageId,files.blobName,files.fileName)\
+    .select_from(filesresidence)\
+    .join(files,files.id==filesresidence.filesId)\
+    .where(files.id == fileId)
+    # Exécuter la requête et récupérer les résultats sous forme de liste
+    file_residence = db.session.execute(file_residence_query).all()
+    file_residence=[{"residenceId":member[0],"storageId":member[1],"blobName":member[2],"fileName":member[3]} for member in file_residence]
+    if(file_residence[0]["residenceId"]==currRes["residenceId"]):
+        BLOB_NAME=file_residence[0]["blobName"]
+        url= file_residence[0]["storageId"]
+        sas_token = generate_blob_sas(
+            account_name=ACCOUNT_NAME,
+            account_key=ACCOUNT_KEY,
+            container_name=CONTAINER_NAME,
+            blob_name=BLOB_NAME,
+            permission=AccountSasPermissions(read=True),
+            expiry=datetime.datetime.utcnow() + timedelta(hours=1)
+        )
+        url_with_sas = f"{url}?{sas_token}"
+        response = requests.get(url_with_sas, stream=True)
 
-    url_with_sas = f"{url}?{sas_token}"
-    return redirect(url_with_sas)
+        headers = {key: value for (key, value) in response.headers.items()}
+        #return send_file(response.content)
+        return (response.content, response.status_code, headers)
+        #return redirect(url_with_sas)
+    else:
+        return redirect("www.google.com")

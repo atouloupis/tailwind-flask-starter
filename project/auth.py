@@ -42,12 +42,7 @@ def login_post():
     #save the residence list and current residence in session
     session["residence"] = residences_list_dicts
     session["currentRes"] = residences_list_dicts[0]
-    #fileTypes = list(fileType.__members__.items())
     fileTypes=[{"name":member.name,"value":member.value} for member in fileType]
-    print(str(fileTypes))
-
-    #fileTypes=json.dumps(fileType)
-    print(fileTypes)
     session["fileTypes"]=fileTypes
     return redirect(url_for('main.tourdecontrol'))
 
